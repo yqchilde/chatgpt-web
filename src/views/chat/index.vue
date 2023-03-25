@@ -497,8 +497,8 @@ onUnmounted(() => {
                 </div>
                 <br>
                 <span>
-                  <img src="wechat.png" style="margin:auto;display:inline-block;width:30%;height:30%;">
-                  <img src="alipay.jpg" style="margin:auto;display:inline-block;width:30%;height:30%;">
+                  <img src="/wechat.png" style="margin:auto;display:inline-block;width:30%;height:30%;">
+                  <img src="/alipay.jpg" style="margin:auto;display:inline-block;width:30%;height:30%;">
                 </span>
               </div>
             </div>
