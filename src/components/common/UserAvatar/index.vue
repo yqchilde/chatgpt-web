@@ -1,9 +1,10 @@
 <script setup lang='ts'>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { NAvatar } from 'naive-ui'
 import { useUserStore } from '@/store'
 import defaultAvatar from '@/assets/avatar.jpg'
 import { isString } from '@/utils/is'
+import { fetchChatConfig } from '@/api'
 
 interface ConfigState {
   balance?: string
@@ -14,6 +15,15 @@ const userStore = useUserStore()
 const config = ref<ConfigState>()
 
 const userInfo = computed(() => userStore.userInfo)
+
+async function fetchConfig() {
+  const { data } = await fetchChatConfig<ConfigState>()
+  config.value = data
+}
+
+onMounted(() => {
+  fetchConfig()
+})
 </script>
 
 <template>
@@ -36,7 +46,7 @@ const userInfo = computed(() => userStore.userInfo)
         {{ userInfo.name ?? 'YY-ChatGPT公益站' }}
       </h2>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
-        公益{{ $t("setting.balance") }}：{{ config?.balance ?? '-' }}
+        公益{{ $t("setting.balance") }}：${{ config?.balance ?? '0.00' }}
       </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
