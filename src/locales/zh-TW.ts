@@ -25,7 +25,7 @@ export default {
     success: '操作成功',
     failed: '操作失敗',
     verify: '驗證',
-    unauthorizedTips: '未經授權，請先進行驗證。',
+    unauthorizedTips: '出於對機器人惡意請求的處理，需要請先進行驗證，秘鑰是 ',
   },
   chat: {
     placeholder: '來說點什麼...（Shift + Enter = 換行）',

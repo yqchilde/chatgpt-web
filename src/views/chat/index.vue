@@ -484,9 +484,23 @@ onUnmounted(() => {
           :class="[isMobile ? 'p-2' : 'p-4']"
         >
           <template v-if="!dataSources.length">
-            <div class="flex items-center justify-center mt-4 text-center text-neutral-300">
-              <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
-              <span>Aha~</span>
+            <div class="flex flex-col items-center justify-center mt-4 text-center">
+              <div class="border-2 border-dashed border-gray-300 rounded-md" style="width:90%; padding:10px;">
+                <div class="text-lg">
+                  本公益站免费提供学习和测试，ApiKey费用由本站承担，欢迎收藏和转发
+                </div>
+                <div class="text-lg">
+                  如果您觉得对您有帮助并条件允许的话，可以请站长和一瓶冰阔落，您的支持可以让小站坚持的更久
+                </div>
+                <div class="text-lg">
+                  广告：如果你需要购买成品账号，请来<a class="text-blue-500" href="https://ka.closeai.me">https://ka.closeai.me</a>
+                </div>
+                <br>
+                <span>
+                  <img src="wechat.png" style="margin:auto;display:inline-block;width:30%;height:30%;">
+                  <img src="alipay.jpg" style="margin:auto;display:inline-block;width:30%;height:30%;">
+                </span>
+              </div>
             </div>
           </template>
           <template v-else>

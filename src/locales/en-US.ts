@@ -25,7 +25,7 @@ export default {
     success: 'Success',
     failed: 'Failed',
     verify: 'Verify',
-    unauthorizedTips: 'Unauthorized, please verify first.',
+    unauthorizedTips: 'To process malicious requests from robots, please verify them first. The secret key is ',
   },
   chat: {
     placeholder: 'Ask me anything...(Shift + Enter = line break)',
