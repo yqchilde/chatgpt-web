@@ -1,28 +1,40 @@
 <script setup lang='ts'>
 import { computed, onMounted, ref } from 'vue'
 import { NAvatar } from 'naive-ui'
-import { useUserStore } from '@/store'
+import { useAuthStore, useUserStore } from '@/store'
 import defaultAvatar from '@/assets/avatar.jpg'
 import { isString } from '@/utils/is'
 import { fetchChatConfig } from '@/api'
 
 interface ConfigState {
+  timeoutMs?: number
+  reverseProxy?: string
+  apiModel?: string
+  socksProxy?: string
+  httpsProxy?: string
   balance?: string
 }
 
 const userStore = useUserStore()
 
-const config = ref<ConfigState>()
+const authStore = useAuthStore()
 
 const userInfo = computed(() => userStore.userInfo)
 
+const needPermission = computed(() => !!authStore.session?.auth && !authStore.token)
+
+const config = ref<ConfigState>()
+
 async function fetchConfig() {
   const { data } = await fetchChatConfig<ConfigState>()
+  if (data.balance === '-')
+    data.balance = '无效'
   config.value = data
 }
 
 onMounted(() => {
-  fetchConfig()
+  if (!needPermission.value)
+    fetchConfig()
 })
 </script>
 
@@ -46,7 +58,7 @@ onMounted(() => {
         {{ userInfo.name ?? 'YY-ChatGPT公益站' }}
       </h2>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
-        公益{{ $t("setting.balance") }}：${{ config?.balance ?? '0.00' }}
+        公益{{ $t("setting.balance") }}：${{ config?.balance ?? '-' }}
       </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
