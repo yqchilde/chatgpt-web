@@ -49,6 +49,9 @@ export default defineConfig((env) => {
       commonjsOptions: {
         ignoreTryCatch: false,
       },
+      rollupOptions: {
+        external: ['wechat.png', 'alipay.jpg'],
+      },
     },
   }
 })
