@@ -490,7 +490,7 @@ onUnmounted(() => {
                   本公益站免费提供学习和测试，ApiKey费用由本站承担，欢迎收藏和转发
                 </div>
                 <div class="text-lg">
-                  如果您觉得对您有帮助并条件允许的话，可以请站长和一瓶冰阔落，您的支持可以让小站坚持的更久
+                  如果您觉得对您有帮助并条件允许的话，可以请我喝一瓶冰阔落，您的支持可以让小站坚持的更久
                 </div>
                 <div class="text-lg">
                   广告：如果你需要购买成品账号，请来<a class="text-blue-500" href="https://ka.closeai.me">https://ka.closeai.me</a>
