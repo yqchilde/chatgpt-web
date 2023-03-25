@@ -1,11 +1,17 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { NAvatar } from 'naive-ui'
 import { useUserStore } from '@/store'
 import defaultAvatar from '@/assets/avatar.jpg'
 import { isString } from '@/utils/is'
 
+interface ConfigState {
+  balance?: string
+}
+
 const userStore = useUserStore()
+
+const config = ref<ConfigState>()
 
 const userInfo = computed(() => userStore.userInfo)
 </script>
@@ -27,8 +33,11 @@ const userInfo = computed(() => userStore.userInfo)
     </div>
     <div class="flex-1 min-w-0 ml-2">
       <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap">
-        {{ userInfo.name ?? 'ChenZhaoYu' }}
+        {{ userInfo.name ?? 'YY-ChatGPT公益站' }}
       </h2>
+      <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
+        公益{{ $t("setting.balance") }}：{{ config?.balance ?? '-' }}
+      </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
           v-if="isString(userInfo.description) && userInfo.description !== ''"
