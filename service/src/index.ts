@@ -25,6 +25,8 @@ router.post('/chat-process', [auth, limiter], async (req, res) => {
   try {
     const { prompt, options = {}, systemMessage } = req.body as RequestProps
     let firstChunk = true
+    let chatLength = 0
+    let newChatLength = 0
     await chatReplyProcess({
       message: prompt,
       lastContext: options,
@@ -33,11 +35,10 @@ router.post('/chat-process', [auth, limiter], async (req, res) => {
           res.write(`${JSON.stringify(chat)}t1h1i4s5i1s4a1s9i1l9l8y1s0plit`)
           firstChunk = false
         }
-        else {
-          let tmp = chat.delta
-          if (!(chat.delta))
-            tmp = ''
-          res.write(tmp)
+        else if (chatLength !== chat.text.length) {
+          newChatLength = chat.text.length
+          res.write(chat.text.substring(chatLength, newChatLength))
+          chatLength = newChatLength
         }
       },
       systemMessage,
