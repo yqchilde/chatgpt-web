@@ -61,6 +61,9 @@ onMounted(() => {
         公益{{ $t("setting.balance") }}：${{ config?.balance ?? '-' }}
       </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
+        公众号《程序员于同学》
+      </p>
+      <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
           v-if="isString(userInfo.description) && userInfo.description !== ''"
           v-html="userInfo.description"
