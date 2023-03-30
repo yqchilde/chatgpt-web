@@ -61,7 +61,7 @@ onMounted(() => {
         公益{{ $t("setting.balance") }}：${{ config?.balance ?? '-' }}
       </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
-        公众号《程序员于同学》
+        公众号《程序员Y的杂记》
       </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
