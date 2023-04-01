@@ -55,11 +55,11 @@ onMounted(() => {
     </div>
     <div class="flex-1 min-w-0 ml-2">
       <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap">
-        {{ userInfo.name ?? 'YY-ChatGPT公益站' }}
+        {{ userInfo.name ?? 'YYのChatGPT公益站' }}
       </h2>
-      <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
+      <!-- <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         公益{{ $t("setting.balance") }}：${{ config?.balance ?? '-' }}
-      </p>
+      </p> -->
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         公众号《程序员Y的杂记》
       </p>
