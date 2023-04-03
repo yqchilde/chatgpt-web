@@ -128,7 +128,7 @@ async function onConversation() {
               dataSources.value.length - 1,
               {
                 dateTime: new Date().toLocaleString(),
-                text: lastText + (data.text ?? ''),
+                text: lastText + data.text ?? '',
                 inversion: false,
                 error: false,
                 loading: true,
@@ -259,7 +259,7 @@ async function onRegenerate(index: number) {
               index,
               {
                 dateTime: new Date().toLocaleString(),
-                text: lastText + (data.text ?? ''),
+                text: lastText + data.text ?? '',
                 inversion: false,
                 error: false,
                 loading: true,
@@ -485,9 +485,9 @@ onUnmounted(() => {
             <div class="flex flex-col items-center justify-center mt-4 text-center">
               <div class="border-2 border-dashed border-gray-300 rounded-md" style="width:90%; padding:10px;">
                 <div class="text-lg">
-                  本公益站免费提供学习和测试，ApiKey费用由本站承担，欢迎收藏和转发
+                  抱歉，不可抗因素，本站点已被禁止访问
                 </div>
-                <div class="text-lg">
+                <!-- <div class="text-lg">
                   如果本公益站被禁止访问，请将域名的chat替换为chat1 ~ chat3任意一个可访问的站点
                 </div>
                 <div class="text-lg">
@@ -500,7 +500,7 @@ onUnmounted(() => {
                 <span>
                   <img src="/wechat.png" style="margin:auto;display:inline-block;width:30%;height:30%;">
                   <img src="/alipay.jpg" style="margin:auto;display:inline-block;width:30%;height:30%;">
-                </span>
+                </span> -->
               </div>
             </div>
           </template>

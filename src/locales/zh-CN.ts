@@ -25,7 +25,7 @@ export default {
     success: '操作成功',
     failed: '操作失败',
     verify: '验证',
-    unauthorizedTips: '出于对机器人恶意请求的处理，需要请先进行验证，秘钥是 ',
+    unauthorizedTips: '不可抗因素，本站不对外使用了，个人使用请自建或寻找其他公益站',
   },
   chat: {
     newChatButton: '新建聊天',
