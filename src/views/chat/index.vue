@@ -485,7 +485,7 @@ onUnmounted(() => {
             <div class="flex flex-col items-center justify-center mt-4 text-center">
               <div class="border-2 border-dashed border-gray-300 rounded-md" style="width:90%; padding:10px;">
                 <div class="text-lg">
-                  抱歉，不可抗因素，本站点已被禁止访问
+                  抱歉，不可抗因素，本站不对外使用了，仅对几个朋友使用，获取验证码请联系YY
                 </div>
                 <!-- <div class="text-lg">
                   如果本公益站被禁止访问，请将域名的chat替换为chat1 ~ chat3任意一个可访问的站点

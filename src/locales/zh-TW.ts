@@ -25,7 +25,7 @@ export default {
     success: '操作成功',
     failed: '操作失敗',
     verify: '驗證',
-    unauthorizedTips: '出於對機器人惡意請求的處理，需要請先進行驗證，秘鑰是 ',
+    unauthorizedTips: '不可抗因素，本站不對外使用了，僅對幾個朋友使用，驗證碼請聯系YY',
   },
   chat: {
     newChatButton: '新建對話',
